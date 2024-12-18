@@ -1,7 +1,7 @@
 {
     "name": "capture-app",
     "homepage": ".",
-    "version": "101.16.0",
+    "version": "101.20.0",
     "cacheVersion": "7",
     "serverVersion": "38",
     "license": "BSD-3-Clause",
@@ -10,6 +10,7 @@
         "packages/rules-engine"
     ],
     "dependencies": {
+        "@dhis2/rules-engine-javascript": "101.20.0",
         "@dhis2/app-runtime": "^3.9.3",
         "@dhis2/d2-i18n": "^1.1.0",
         "@dhis2/d2-icons": "^1.0.1",
@@ -17,19 +18,18 @@
         "@dhis2/d2-ui-org-unit-tree": "^7.3.3",
         "@dhis2/d2-ui-rich-text": "^7.4.0",
         "@dhis2/d2-ui-sharing-dialog": "^7.3.3",
-        "@dhis2/rules-engine-javascript": "101.16.0",
         "@dhis2/ui": "^9.10.1",
+        "@dhis2-ui/calendar": "^10.0.3",
         "@emotion/react": "^11.14.0",
         "@emotion/styled": "^11.14.0",
+        "antd": "^5.22.4",
+        "@ant-design/icons": "^4.x.x",
         "@joakim_sm/react-infinite-calendar": "^2.4.2",
         "@material-ui/core": "3.9.4",
         "@material-ui/icons": "3",
-        "@mui/icons-material": "^6.1.10",
-        "@mui/material": "^6.1.10",
         "@popperjs/core": "^2.11.6",
         "@react-leaflet/core": "^1.1.1",
         "@redux-offline/redux-offline": "^2.6.0",
-        "antd": "^5.22.4",
         "autosuggest-highlight": "^3.3.4",
         "classnames": "^2.3.1",
         "d2-manifest": "^1.0.0",
@@ -42,7 +42,7 @@
         "loglevel": "^1.9.1",
         "moment": "^2.29.4",
         "prop-types": "^15.8.1",
-        "query-string": "^7.1.1",
+        "query-string": "^9.1.1",
         "react": "^16.14.0",
         "react-addons-update": "^15.6.3",
         "react-dnd": "^14.0.5",
@@ -73,7 +73,7 @@
         "uuid": "^9.0.0"
     },
     "scripts": {
-        "start": "d2-app-scripts start",
+        "start": "yarn verifyCacheVersion && concurrently --kill-others \"yarn workspaces run build:watch\" \"d2-app-scripts start\"",
         "start:forCypress": "yarn workspaces run build && node scripts/startAppForCypress.js",
         "build": "yarn verifyCacheVersion && yarn workspaces run build && GENERATE_SOURCEMAP=false d2-app-scripts build && cp ./package.json ./build/app/package.json",
         "build:standalone": "yarn workspaces run build && GENERATE_SOURCEMAP=false d2-app-scripts build --standalone",
@@ -141,6 +141,7 @@
         "@dhis2/app-runtime": "^3.10.2",
         "@babel/preset-react": "7.16.7",
         "@dhis2/ui": "^9.10.1",
+        "@dhis2-ui/calendar": "^10.0.3",
         "@js-temporal/polyfill": "0.4.3",
         "core-js": "2.5.7",
         "i18next": "^20.5.0"
@@ -156,5 +157,6 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
-    }
+    },
+    "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
