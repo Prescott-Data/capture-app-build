@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "./static/css/main.7fdd0d18.css",
-    "main.js": "./static/js/main.e9ec58ad.js",
-    "app.css": "./static/css/app.a2d9d4d9.chunk.css",
+    "main.js": "./static/js/main.b3efa8cb.js",
+    "app.css": "./static/css/app.fbaeee69.chunk.css",
     "app.js": "./static/js/app.b3c8c9d4.chunk.js",
     "moment-locales/af.js": "./static/js/moment-locales/af.21f33fd3.chunk.js",
     "moment-locales/ar.js": "./static/js/moment-locales/ar.3ca61565.chunk.js",
@@ -277,6 +277,6 @@
   },
   "entrypoints": [
     "static/css/main.7fdd0d18.css",
-    "static/js/main.e9ec58ad.js"
+    "static/js/main.b3efa8cb.js"
   ]
 }
